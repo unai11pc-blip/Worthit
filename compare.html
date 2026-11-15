@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e1020" />
+    <meta name="description" content="Prototipo de comparación de productos online de WorthIt." />
+    <title>WorthIt Compare — Encuentra una opción mejor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="compare-page">
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+    <header class="site-header wrapper">
+      <a class="brand" href="index.html" aria-label="Volver a WorthIt">
+        <span class="brand-mark">W</span>
+        <span>WorthIt</span>
+      </a>
+      <div class="header-actions">
+        <a class="compare-link is-current" href="compare.html">Comparar tiendas</a>
+        <a class="saved-link" href="index.html#lista">Mi lista</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="compare-hero wrapper">
+        <p class="eyebrow"><span></span> WorthIt Compare / España</p>
+        <h1>El mismo producto.<br /><em>Una decisión mejor.</em></h1>
+        <p>Compara el precio final, la entrega y la protección de compra. Después decide si quieres comprarlo de verdad.</p>
+      </section>
+
+      <section class="catalog-section wrapper" aria-labelledby="catalogTitle">
+        <div class="demo-banner" role="note">
+          <span>DEMO</span>
+          <p>Los productos y precios de esta pantalla son ejemplos de diseño. Aún no consultamos las tiendas ni mostramos precios reales.</p>
+        </div>
+
+        <div class="catalog-heading">
+          <div>
+            <p class="section-number">01 / COMPARA</p>
+            <h2 id="catalogTitle">Encuentra tu producto</h2>
+          </div>
+          <p>Primero enseñamos coincidencias exactas. Las alternativas similares siempre se indican por separado.</p>
+        </div>
+
+        <form class="catalog-search" id="catalogSearchForm" role="search">
+          <label class="sr-only" for="catalogSearch">Buscar producto</label>
+          <input id="catalogSearch" type="search" placeholder="Busca auriculares, teclado, zapatillas…" autocomplete="off" />
+          <label class="sr-only" for="storeFilter">Filtrar por tienda</label>
+          <select id="storeFilter">
+            <option value="all">Todas las tiendas demo</option>
+            <option value="Amazon España">Amazon España</option>
+            <option value="PcComponentes">PcComponentes</option>
+            <option value="MediaMarkt">MediaMarkt</option>
+            <option value="El Corte Inglés">El Corte Inglés</option>
+            <option value="Decathlon">Decathlon</option>
+          </select>
+          <button type="submit">Buscar <span>→</span></button>
+        </form>
+
+        <div class="category-filters" aria-label="Filtrar por categoría">
+          <button class="filter-chip is-active" data-category="all" type="button">Todo</button>
+          <button class="filter-chip" data-category="tecnologia" type="button">Tecnología</button>
+          <button class="filter-chip" data-category="hogar" type="button">Hogar</button>
+          <button class="filter-chip" data-category="deporte" type="button">Deporte</button>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <p class="empty-catalog" id="emptyCatalog" hidden>No hay productos demo con esos filtros. Prueba otra búsqueda.</p>
+      </section>
+
+      <section class="product-detail wrapper" id="productDetail" aria-live="polite"></section>
+
+      <section class="store-roadmap wrapper" aria-labelledby="roadmapTitle">
+        <div>
+          <p class="section-number">02 / PRÓXIMAS FUENTES</p>
+          <h2 id="roadmapTitle">Preparado para crecer, tienda a tienda.</h2>
+        </div>
+        <p class="roadmap-intro">La interfaz ya distingue productos idénticos de alternativas. Las fuentes reales se añadirán con permisos, datos verificables y una fecha de actualización visible.</p>
+        <div class="store-groups">
+          <article>
+            <span class="store-group-number">01</span>
+            <h3>Tecnología</h3>
+            <p>Amazon · PcComponentes · MediaMarkt · Fnac · El Corte Inglés · Worten</p>
+          </article>
+          <article>
+            <span class="store-group-number">02</span>
+            <h3>Hogar y bricolaje</h3>
+            <p>Amazon · IKEA · Leroy Merlin · ManoMano · Carrefour</p>
+          </article>
+          <article>
+            <span class="store-group-number">03</span>
+            <h3>Deporte y moda</h3>
+            <p>Decathlon · Sprinter · Tradeinn · Zalando · ASOS · Shein</p>
+          </article>
+          <article>
+            <span class="store-group-number">04</span>
+            <h3>Marketplaces</h3>
+            <p>AliExpress · Temu · Miravia · eBay · Mercado Libre*</p>
+          </article>
+        </div>
+        <p class="roadmap-note">* Mercado Libre se activaría por país; los precios, envíos y vendedores cambian según el mercado.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer wrapper">
+      <span>WORTHIT COMPARE / PROTOTIPO</span>
+      <a href="index.html">Volver a mi análisis</a>
+    </footer>
+
+    <script src="compare.js"></script>
+  </body>
+</html>
